@@ -1,0 +1,148 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>{% block title %}{% endblock %}</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="initial-scale=1 width=device-width">
+	<link rel="icon" type="image/icon type" href="{% static 'points/images/1.png' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'points/css/styles.css' %}">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<!-- React -->
+	<script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+	<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+	<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+	<!-- My scripts -->
+	<script type="text/javascript" src="{% static 'points/js/draggable.js' %}"></script>
+	<script type="module" src="{% static 'points/js/points.js' %}"></script>
+</head>
+<body>
+	{% include 'points/navbar.html' %}
+	{% block body %}{% endblock %}
+	<div id="mydiv4">
+		<div id="mydiv4header"></div>
+		<div id="app"></div>
+	</div>
+	<div id="mydiv5">
+		<div id="mydiv5header">Points</div>
+		<div id="searchnode"></div>
+	</div>
+	<div id="mydiv6">
+		<div id="mydiv6header">Mesh</div>
+		<div id="app1"></div>
+	</div>
+	<div id="geoButtons">
+		<div id="geometryImages">
+			<button data-type="points" class="geoImg"><span class="spanPoints"></span></button>
+			<button data-type="lines" class="geoImg"><span class="spanLines"></span></button>
+			<button data-type="mesh" class="geoImg"><span class="spanMesh"></span></button>
+			<button class="geoImg"><span class="pokebola"></span></button>
+		</div>
+	</div>
+		
+
+	<script type="text/babel">
+		class App extends React.Component {
+			constructor(props) {
+				super(props);
+				this.state = {
+					count: 0,
+					type: "Points",
+					mesh: "points"
+				};
+			}
+			render() {
+				
+				if (this.state.mesh === "mesh") {
+					document.querySelector("#mydiv4header").innerText = `${this.state.type}`;
+					return (
+						<div className="wrapper">
+							<div className="inputs">
+								<ul>
+									<li><span></span>Geometry</li>
+									<li>Type</li>
+									<li>Quantity</li>
+								</ul>
+								
+							</div>
+							<div className="outputs">
+								<ul>
+									<li>{this.state.type}</li>
+								</ul>
+							</div>
+						</div>
+					)
+				}
+				else {
+					document.querySelector("#mydiv4header").innerText = `${this.state.type}`;
+					return (
+						<div className="wrapper">
+							<div className="inputs">
+								<ul>
+									<li><span></span>Geometry</li>
+									<li>Type</li>
+									<li>Quantity</li>
+								</ul>
+								
+							</div>
+							<div className="outputs">
+								<ul>
+									<li>{this.state.type}</li>
+								</ul>
+							</div>
+						</div>
+					)
+
+				}
+			}
+		}
+
+		class SearchNode extends React.Component {
+			constructor(props) {
+				super(props);
+				this.state = {
+					type: "Search",
+					query: ''
+				};
+			}
+			render() {
+				
+				document.querySelector("#mydiv5header").innerText = `${this.state.type}`;
+				return (
+					<div className="wrapper">
+						<div className="input-group">
+						    <input type="text" className="form-control" placeholder="Search"></input>
+						    <div className="input-group-btn">
+						      <button className="btn btn-default" type="submit">
+						        <i className="glyphicon glyphicon-search"></i>
+						      </button>
+						    </div>
+						</div>
+					</div>
+				)
+			}
+	}
+
+	ReactDOM.render(<App />, document.querySelector("#app"));
+	ReactDOM.render(<App />, document.querySelector("#app1"));
+	ReactDOM.render(<SearchNode />, document.querySelector("#searchnode"));
+	</script>
+	<script type="text/javascript">
+		document.querySelectorAll('input').forEach(input => {
+			input.addEventListener("keyup", function() {
+				let html = "";
+				$.get("/quotes/" + input.value, function(nodes) {
+					for (let node of nodes.nodes)
+					{
+						let nodes = node;
+						html += "<option value="+ nodes + ">";
+					}
+					document.querySelector("datalist").innerHTML = html;
+				});
+			});
+		});
+	</script>
+	<script src="{% static 'points/js/bootstrap.js' %}"></script>
+</body>
+</html>

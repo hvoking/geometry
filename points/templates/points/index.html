@@ -1,0 +1,20 @@
+{% extends 'points/layout.html' %}
+{% block title %}Points{% endblock %}
+{% block body %}
+	<canvas id="page_background"></canvas>
+	<div id="mydiv">
+	  <div id="mydivheader">Click here to move</div>
+		<div id="gui_container"></div>
+	</div>
+	<div id="mydiv2">
+	  <div id="mydiv2header">Background Color</div>
+		<div id="gui_background"></div>
+	</div>
+	<div id="mydiv3">
+	  <div id="mydiv3header">Slider</div>
+	  <div>
+		<input type="range" min="1" max="100" value="43" class="slider" id="uRange">
+		<div id="u"></div>
+	  </div>
+	</div>	
+{% endblock %}
