@@ -4,7 +4,7 @@ from django.urls import reverse
 import numpy as np
 
 def index(request):
-	return render(request, "points/index.html")
+	return render(request, "points/layout.html")
 
 def quotes(request, node=1):
 	q = request

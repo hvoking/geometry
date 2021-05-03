@@ -16,22 +16,27 @@
 	<!-- My scripts -->
 	<script type="text/javascript" src="{% static 'points/js/draggable.js' %}"></script>
 	<script type="module" src="{% static 'points/js/points.js' %}"></script>
+	{% block head %}{% endblock %}
 </head>
 <body>
 	{% include 'points/navbar.html' %}
+		<canvas id="page_background"></canvas>
+		<div id="mydiv">
+		  <div id="mydivheader">Click here to move</div>
+			<div id="gui_container"></div>
+		</div>
+		<div id="mydiv2">
+		  <div id="mydiv2header">Background Color</div>
+			<div id="gui_background"></div>
+		</div>
+		<div id="mydiv3">
+		  <div id="mydiv3header">Slider</div>
+		  <div>
+			<input type="range" min="1" max="100" value="43" class="slider" id="uRange">
+			<div id="u"></div>
+		  </div>
+		</div>
 	{% block body %}{% endblock %}
-	<div id="mydiv4">
-		<div id="mydiv4header"></div>
-		<div id="app"></div>
-	</div>
-	<div id="mydiv5">
-		<div id="mydiv5header">Points</div>
-		<div id="searchnode"></div>
-	</div>
-	<div id="mydiv6">
-		<div id="mydiv6header">Mesh</div>
-		<div id="app1"></div>
-	</div>
 	<div id="geoButtons">
 		<div id="geometryImages">
 			<button data-type="points" class="geoImg"><span class="spanPoints"></span></button>
@@ -40,94 +45,6 @@
 			<button class="geoImg"><span class="pokebola"></span></button>
 		</div>
 	</div>
-		
-
-	<script type="text/babel">
-		class App extends React.Component {
-			constructor(props) {
-				super(props);
-				this.state = {
-					count: 0,
-					type: "Points",
-					mesh: "points"
-				};
-			}
-			render() {
-				
-				if (this.state.mesh === "mesh") {
-					document.querySelector("#mydiv4header").innerText = `${this.state.type}`;
-					return (
-						<div className="wrapper">
-							<div className="inputs">
-								<ul>
-									<li><span></span>Geometry</li>
-									<li>Type</li>
-									<li>Quantity</li>
-								</ul>
-								
-							</div>
-							<div className="outputs">
-								<ul>
-									<li>{this.state.type}</li>
-								</ul>
-							</div>
-						</div>
-					)
-				}
-				else {
-					document.querySelector("#mydiv4header").innerText = `${this.state.type}`;
-					return (
-						<div className="wrapper">
-							<div className="inputs">
-								<ul>
-									<li><span></span>Geometry</li>
-									<li>Type</li>
-									<li>Quantity</li>
-								</ul>
-								
-							</div>
-							<div className="outputs">
-								<ul>
-									<li>{this.state.type}</li>
-								</ul>
-							</div>
-						</div>
-					)
-
-				}
-			}
-		}
-
-		class SearchNode extends React.Component {
-			constructor(props) {
-				super(props);
-				this.state = {
-					type: "Search",
-					query: ''
-				};
-			}
-			render() {
-				
-				document.querySelector("#mydiv5header").innerText = `${this.state.type}`;
-				return (
-					<div className="wrapper">
-						<div className="input-group">
-						    <input type="text" className="form-control" placeholder="Search"></input>
-						    <div className="input-group-btn">
-						      <button className="btn btn-default" type="submit">
-						        <i className="glyphicon glyphicon-search"></i>
-						      </button>
-						    </div>
-						</div>
-					</div>
-				)
-			}
-	}
-
-	ReactDOM.render(<App />, document.querySelector("#app"));
-	ReactDOM.render(<App />, document.querySelector("#app1"));
-	ReactDOM.render(<SearchNode />, document.querySelector("#searchnode"));
-	</script>
 	<script type="text/javascript">
 		document.querySelectorAll('input').forEach(input => {
 			input.addEventListener("keyup", function() {
