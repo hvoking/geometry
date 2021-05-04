@@ -19,7 +19,7 @@
 	{% block head %}{% endblock %}
 </head>
 <body>
-	{% include 'points/navbar.html' %}
+	<!-- {% include 'points/navbar.html' %} -->
 		<canvas id="page_background"></canvas>
 		<div id="mydiv">
 		  <div id="mydivheader">Click here to move</div>
@@ -37,14 +37,7 @@
 		  </div>
 		</div>
 	{% block body %}{% endblock %}
-	<div id="geoButtons">
-		<div id="geometryImages">
-			<button data-type="points" class="geoImg"><span class="spanPoints"></span></button>
-			<button data-type="lines" class="geoImg"><span class="spanLines"></span></button>
-			<button data-type="mesh" class="geoImg"><span class="spanMesh"></span></button>
-			<button class="geoImg"><span class="pokebola"></span></button>
-		</div>
-	</div>
+
 	<script type="text/javascript">
 		document.querySelectorAll('input').forEach(input => {
 			input.addEventListener("keyup", function() {
