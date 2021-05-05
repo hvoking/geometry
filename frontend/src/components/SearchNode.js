@@ -1,5 +1,4 @@
 const SearchNode = ({ type }) => {
-		
 	return (
 		<div id="mydiv5">
 			<div id="mydiv5header">{ type }</div>

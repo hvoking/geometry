@@ -3,9 +3,6 @@ from django.http import JsonResponse, HttpResponseRedirect
 from django.urls import reverse
 import numpy as np
 
-def index(request):
-	return render(request, "points/layout.html")
-
 def quotes(request, node=1):
 	q = request
 	if q:
@@ -28,7 +25,7 @@ def points(request, geometry, name, quantity=30):
 				points = pointTriangulation(xx, yy, zz)
 		return JsonResponse({"Positions" : points})
 	else:
-		return HttpResponseRedirect(reverse("points:index"))
+		return HttpResponseRedirect(reverse("frontend"))
 
 # Polar coordinates
 def sphereEquation(r, tstart, tend, vstart, vend, quantity):

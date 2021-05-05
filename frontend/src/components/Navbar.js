@@ -17,10 +17,10 @@ const Navbar = () => {
 			        <a className="dropdown-toggle" data-toggle="dropdown" href="/frontend">Geometry
 			        <span className="caret"></span></a>
 			        <ul className="dropdown-menu">
-			          <li><a className="geometry" href="">Sphere</a></li>
-			          <li><a className="geometry" href="">Cube</a></li>
-			          <li><a className="geometry" href="">Cylinder</a></li>
-			          <li><a className="geometry" href="">Equation1</a></li>
+			          <li><a className="geometry" href="/frontend">Sphere</a></li>
+			          <li><a className="geometry" href="/frontend">Cube</a></li>
+			          <li><a className="geometry" href="/frontend">Cylinder</a></li>
+			          <li><a className="geometry" href="/frontend">Equation1</a></li>
 			        </ul>
 			      </li>
 			      <li><a href="/frontend">Items</a></li>
@@ -32,7 +32,7 @@ const Navbar = () => {
 					    <div className="selector">
 					    	<div className="field-knob"></div>
 					    	<div className="saturation-field">
-					    		<div className="c" style="width: 100%; height: 100%; background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 100%);"></div>
+					    		<div className="c" style={{width: "100%", height: "100%", background: "-webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 100%)"}}></div>
 					    	</div>
 					    	<div className="hue-field">
 					    		<div className="hue-knob"></div>
