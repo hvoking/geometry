@@ -6,7 +6,6 @@ document.addEventListener("DOMContentLoaded", () => {
   dragElement(document.getElementById("mydiv3"));
   dragElement(document.getElementById("mydiv4"));
   dragElement(document.getElementById("mydiv5"));
-  dragElement(document.getElementById("mydiv6"));
 
 
   function dragElement(elmnt) {

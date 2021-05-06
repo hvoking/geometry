@@ -10,8 +10,8 @@ function App() {
       <Navbar />
       <GeoButtons />
       <Slider />
-      <Nodes type="Points" mesh="points" />
-      <SearchNode type="Search" />
+      <Nodes output="Points" name="Points" />
+      <SearchNode />
     </div>
   );
 }

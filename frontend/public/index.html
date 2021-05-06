@@ -1,4 +1,51 @@
-{% extends 'points/layout.html' %}
-{% block body %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>GrassWeb</title>
+  <meta charset="utf-8">
+  <link rel="icon" type="image/icon type" href="{% static 'images/1.png' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+  <link 
+    rel="stylesheet" 
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" 
+    integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" 
+    crossorigin="anonymous">
+  <script 
+    src="https://code.jquery.com/jquery-3.6.0.min.js" 
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" 
+    crossorigin="anonymous">
+  </script>
+  <!-- My scripts -->
+  <script type="text/javascript" src="{% static 'points/js/draggable.js' %}"></script>
+  <script type="module" src="{% static 'points/js/points.js' %}"></script>
+</head>
+<body>
+    <canvas id="page_background"></canvas>
+    <div id="mydiv">
+      <div id="mydivheader">Click here to move</div>
+      <div id="gui_container"></div>
+    </div>
+    <div id="mydiv2">
+      <div id="mydiv2header">Background Color</div>
+      <div id="gui_background"></div>
+    </div>
   <div id="root"></div>
-{% endblock %}
+  <script type="text/javascript">
+    document.querySelectorAll('input').forEach(input => {
+      input.addEventListener("keyup", function() {
+        let html = "";
+        $.get("/quotes/" + input.value, function(nodes) {
+          for (let node of nodes.nodes)
+          {
+            let nodes = node;
+            html += "<option value="+ nodes + ">";
+          }
+          document.querySelector("datalist").innerHTML = html;
+        });
+      });
+    });
+  </script>
+  <script src="{% static 'points/js/bootstrap.js' %}"></script>
+</body>
+</html>

@@ -1,12 +1,12 @@
-const Nodes = ({ type, mesh }) => {		
+const Nodes = ({ type, name }) => {		
 	return (
 		<div id="mydiv4">
-			<div id="mydiv4header">{ mesh }</div>
+			<div id="mydiv4header">{ name }</div>
 			<div id="app"></div>
 			<div className="wrapper">
 				<div className="inputs">
 					<ul>
-						<li><span></span>Geometry</li>
+						<li>Geometry</li>
 						<li>Type</li>
 						<li>Quantity</li>
 					</ul>
@@ -14,7 +14,7 @@ const Nodes = ({ type, mesh }) => {
 				</div>
 				<div className="outputs">
 					<ul>
-						<li>{type}</li>
+						<li>{ output }</li>
 					</ul>
 				</div>
 			</div>
