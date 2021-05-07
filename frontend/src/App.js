@@ -11,7 +11,7 @@ function App() {
       <GeoButtons />
       <Slider />
       <Nodes output="Points" name="Points" />
-      <SearchNode />
+      <SearchNode type="Search" />
     </div>
   );
 }

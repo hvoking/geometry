@@ -1,4 +1,4 @@
-const Nodes = ({ type, name }) => {		
+const Nodes = ({ output, name }) => {		
 	return (
 		<div id="mydiv4">
 			<div id="mydiv4header">{ name }</div>
