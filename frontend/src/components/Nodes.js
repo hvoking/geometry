@@ -1,21 +1,29 @@
-const Nodes = ({ output, name }) => {		
+import NodeInputList from "./NodeInputList"
+import NodeOutputList from "./NodeOutputList"
+
+const Nodes = ({ name }) => {		
 	return (
 		<div id="mydiv4">
 			<div id="mydiv4header">{ name }</div>
 			<div id="app"></div>
-			<div className="wrapper">
-				<div className="inputs">
-					<ul>
-						<li>Geometry</li>
-						<li>Type</li>
-						<li>Quantity</li>
-					</ul>
-					
+			<div class="wrapper">
+				<div class="inputs">
+					<NodeInputList 
+						connected={ ["yes", "no", "yes"] } 
+						items= { ["hawai", "jamaica", "paraguay"] } 
+						display={ ["yes", "no", "yes"] } 
+						onCompleteConnector={3}
+					/>
 				</div>
-				<div className="outputs">
-					<ul>
-						<li>{ output }</li>
-					</ul>
+				<div class="outputs">
+					<NodeOutputList 
+						connected={ ["yes", "no"] } 
+						items={ ["Hello", "world"] } 
+						display={ ["Escuela", "Iglesia"] }
+						onStartConnector={2}
+						scale={1}
+						positionOffset={5} 
+					/>
 				</div>
 			</div>
 		</div>

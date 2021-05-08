@@ -10,7 +10,7 @@ function App() {
       <Navbar />
       <GeoButtons />
       <Slider />
-      <Nodes output="Points" name="Points" />
+      <Nodes name="Points" />
       <SearchNode type="Search" />
     </div>
   );
