@@ -2,30 +2,36 @@ from django.shortcuts import render
 from django.http import JsonResponse, HttpResponseRedirect
 from django.urls import reverse
 import numpy as np
+from rest_framework.response import Response 
+from rest_framework.decorators import api_view
 
-def quotes(request, node=1):
+from .serializers import GeometrySerializer
+
+@api_view(['GET'])
+def quotes(request):
 	q = request
 	if q:
 		nodes = ["Points", "Curves", "Mesh", "Sphere", "Cube"]
 	else:
 		nodes = []
-	return JsonResponse({"nodes": nodes})
+	return Response({"nodes": nodes})
 
-def points(request, geometry, name, quantity=30):
-	if 'Referer' in request.headers:
-		if name == "Sphere":
+@api_view(['GET'])
+def points(request, type, geometry, quantity=30):
+	# if 'Referer' in request.headers:
+		if geometry == "Sphere":
 			points = sphereEquation(5, -2*np.pi, 2*np.pi, 0, np.pi, quantity)
-			if geometry == "mesh" or geometry == "lines":
+			if type == "mesh" or type == "lines":
 				points = sphereTriangulation(points)
 		else:
-			xx, yy, zz = gridEquations(name, -10, 10, -10, 10, quantity)
-			if geometry == "mesh" or geometry == "lines":
+			xx, yy, zz = gridEquations(geometry, -10, 10, -10, 10, quantity)
+			if type == "mesh" or type == "lines":
 				points = meshTriangulation(xx, yy, zz)
 			else:
 				points = pointTriangulation(xx, yy, zz)
-		return JsonResponse({"Positions" : points})
-	else:
-		return HttpResponseRedirect(reverse("frontend"))
+		return Response({"Positions" : points})
+	# else:
+	# 	return HttpResponseRedirect(reverse("frontend"))
 
 # Polar coordinates
 def sphereEquation(r, tstart, tend, vstart, vend, quantity):

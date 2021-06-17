@@ -1,43 +1,23 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <title>GrassWeb</title>
-  <meta charset="utf-8">
-  <link rel="icon" type="image/icon type" href="{% static 'points/images/1.png' %}">
-  <link rel="stylesheet" type="text/css" href="{% static 'points/css/styles.css' %}">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-  <!-- My scripts -->
-  <script type="text/javascript" src="{% static 'points/js/draggable.js' %}"></script>
-  <script type="module" src="{% static 'points/js/points.js' %}"></script>
-</head>
-<body>
-    <canvas id="page_background"></canvas>
-    <div id="mydiv">
-      <div id="mydivheader">Click here to move</div>
-      <div id="gui_container"></div>
-    </div>
-    <div id="mydiv2">
-      <div id="mydiv2header">Background Color</div>
-      <div id="gui_background"></div>
-    </div>
-  <div id="root"></div>
-  <script type="text/javascript">
-    document.querySelectorAll('input').forEach(input => {
-      input.addEventListener("keyup", function() {
-        let html = "";
-        $.get("/quotes/" + input.value, function(nodes) {
-          for (let node of nodes.nodes)
-          {
-            let nodes = node;
-            html += "<option value="+ nodes + ">";
-          }
-          document.querySelector("datalist").innerHTML = html;
-        });
-      });
-    });
-  </script>
-  <script src="{% static 'points/js/bootstrap.js' %}"></script>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <title>React App</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    </body>
 </html>
