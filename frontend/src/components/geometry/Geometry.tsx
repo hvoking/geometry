@@ -12,16 +12,16 @@ import {
 	Line,
 } from "three";
 
-import { useScene } from '../Context/scene';
-import { useQuantity } from '../Context/quantity';
-import { useGeometry } from '../Context/geometry';
-import { useType } from '../Context/type';
+import { useScene } from '../../hooks/scene';
+import { useQuantity } from '../../hooks/quantity';
+import { useGeometry } from '../../hooks/geometry';
+import { useType } from '../../hooks/type';
 
 const Geometry = () => {
 	const {geometry} = useGeometry();
 	const {type} = useType();
 	const {quantity} = useQuantity();
-	const scene = useScene();
+	const { scene } = useScene();
 	const [vectorPoints, vectorPointsSet] = useState<BufferGeometry[]>([])
 	useEffect(() => {
 		vectorPointsSet([]);

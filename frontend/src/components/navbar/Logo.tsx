@@ -7,7 +7,7 @@ const Logo = () => {
 		        <span className="icon-bar"></span>                        
 			</button>
 			<span className="logo-wrapper">
-				<a className="navbar-brand" href="/frontend">Gustavo Gonzalez</a>
+				<a className="navbar-brand" href="/frontend">MurrugArq</a>
 			</span>
 			<div className="navbar-brand"><a href="/frontend"><i className="glyphicon glyphicon-home"></i></a></div>
 		</div>

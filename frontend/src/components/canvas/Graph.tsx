@@ -5,11 +5,11 @@ import {
 import { useEffect, useRef } from 'react';
 import {OrbitControls} from './OrbitControls.js'
 import Geometry from '../geometry/Geometry';
-import { useScene } from '../Context/scene';
+import { useScene } from '../../hooks/scene';
 
 const Graph = () => {
 	const canvasRef = useRef<null | HTMLDivElement>(null);
-	const scene = useScene();
+	const { scene } = useScene();
 	useEffect(() => {
 		const camera = createNewCamera();
 		const renderer = createNewRenderer();

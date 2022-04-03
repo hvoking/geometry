@@ -1,7 +1,10 @@
-import { useType } from '../Context/type'
-import './Buttons.scss'
+import { useType } from '../../hooks/type'
 
-const Buttons = ({datatype}: {datatype: string}) => {
+interface ButtonsType {
+	datatype: string
+}
+
+const Buttons = ({datatype}: ButtonsType) => {
 	const {toogleType} = useType();
 
 	const capitalizeFirstLetter = (string: string) => {
@@ -13,7 +16,15 @@ const Buttons = ({datatype}: {datatype: string}) => {
 
 	return (
 		<div>
-			<button onClick={onClick} data-type={datatype} className="geoImg"><span className={`span${capitalizeFirstLetter(datatype)}`}></span></button>
+			<button 
+				onClick={onClick} 
+				data-type={datatype} 
+				className="geoImg">
+					<span className=
+						{`span${capitalizeFirstLetter(datatype)}`}
+						>
+					</span>
+			</button>
 		</div>
 	)
 }

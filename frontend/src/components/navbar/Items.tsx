@@ -1,4 +1,4 @@
-import { useGeometry } from '../Context/geometry'
+import { useGeometry } from '../../hooks/geometry'
 
 const Items = () => {
 	const {toogleGeometry} = useGeometry();

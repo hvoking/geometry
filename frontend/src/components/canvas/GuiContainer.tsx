@@ -1,6 +1,5 @@
 import { useRef, useEffect } from 'react';
 import * as dat from 'dat.gui';
-import './GuiContainer.scss';
 
 const GuiContainer = () => {
 	const guiContainerRef = useRef<null | HTMLDivElement>(null)
