@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/murruga/static/css/main.ec1de41b.css",
+    "main.js": "/murruga/static/js/main.10e491e2.js",
+    "static/media/1.png": "/murruga/static/media/1.5fa3392596d29f4f9ddc.png",
+    "index.html": "/murruga/index.html",
+    "main.ec1de41b.css.map": "/murruga/static/css/main.ec1de41b.css.map",
+    "main.10e491e2.js.map": "/murruga/static/js/main.10e491e2.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ec1de41b.css",
+    "static/js/main.10e491e2.js"
+  ]
+}
