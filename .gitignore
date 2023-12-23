@@ -1,0 +1,28 @@
+# coverage result
+.coverage
+/coverage/
+
+# npm
+node_modules/
+npm-debug.log
+
+# Webpack
+/frontend/bundles/*
+/frontend/webpack_bundles/*
+/webpack-stats.json
+
+# Sass
+.sass-cache
+*.map
+
+# General
+/env/
+/output/
+/cache/
+boilerplate.zip
+
+# Spritesmith
+spritesmith-generated/
+spritesmith.scss
+
+tmp_email/

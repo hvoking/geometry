@@ -1,0 +1,6 @@
+.header-wrapper {
+  background-color: rgba(23, 23, 32, 1);
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr min-content 1fr 1fr;
+}

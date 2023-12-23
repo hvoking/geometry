@@ -1,0 +1,35 @@
+$punto: './img/types/points.png';
+$lines: './img/types/lines.png';
+$mesh: './img/types/mesh.png';
+
+.geoImg {
+  background-color: rgba(0, 0, 0, 0.7);
+  outline: none;
+  border-color: #AAAAAA;
+  margin-bottom: 2px;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.8);
+}
+.spanPoints {
+    background-image: url($punto);
+    background-size: 30px 30px;
+    display: inline-block;
+    width: 30px; 
+    height: 30px;
+    content:"";
+  }
+.spanLines {
+    background-image: url($lines);
+    background-size: 30px 30px;
+    display: inline-block;
+    width: 30px; 
+    height: 30px;
+    content:"";
+  }
+.spanMesh {
+    background-image: url($mesh);
+    background-size: 30px 30px;
+    display: inline-block;
+    width: 30px; 
+    height: 30px;
+    content:"";
+  }

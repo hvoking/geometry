@@ -1,0 +1,42 @@
+.colors-wrapper {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-gap: 10px;
+  align-items: center;
+}
+// Color palette
+.saturation-field {
+  position: relative;
+  height: 30px; 
+  border-radius: 2px;
+  background: -webkit-linear-gradient(left, rgb(255, 255, 255) 0%, rgb(255, 0, 0) 100%);
+  cursor: pointer;
+}
+.saturation-field:before {
+  content: "";
+  position: absolute;
+  left: 0; right: 0;
+  top: 0; bottom: 0;
+  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 100%);
+}
+.hue-field {
+  position: relative;
+  height: 30px; 
+  border-radius: 2px;
+  background: -webkit-linear-gradient(left, rgb(255, 0, 0) 0%, rgb(255, 0, 255) 17%, rgb(0, 0, 255) 34%, rgb(0, 255, 255) 50%, rgb(0, 255, 0) 67%, rgb(255, 255, 0) 84%, rgb(255, 0, 0) 100%);
+  cursor: e-resize;
+}
+.saturation-knob {
+  width: 12px; 
+  height: 12px; 
+  border: 2px solid rgb(255, 255, 255); 
+  border-radius: 6px; 
+  cursor: pointer;
+}
+.hue-knob {
+  width: 8px; 
+  height: 12px; 
+  background-color: white;
+}
