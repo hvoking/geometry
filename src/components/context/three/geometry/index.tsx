@@ -19,7 +19,7 @@ export const useThreeGeometry = () => {
 
 export const ThreeGeometryProvider = ({children}: any) => {
 	const { type } = useFilters();
-	const { scene, clearScene, gui } = useCanvas();
+	const { scene, clearScene, gui, setGui } = useCanvas();
 	const { pointMaterial, lineMaterial, meshMaterial } = useMaterials();
 
 	const createGeometry = (vectorPoints: any) => {
@@ -30,20 +30,25 @@ export const ThreeGeometryProvider = ({children}: any) => {
 
 		if (type === "points") {
 			vectorPoints.forEach((array: any) => {
-				group.add( new Points( array, pointMaterial ));
+				const points = new Points( array, pointMaterial);
+				group.add(points);
 			});
 		}
 		else if (type === "lines") {
 			vectorPoints.forEach((array: any) => {
-				group.add( new Line( array, lineMaterial ));
+				const line =  new Line( array, lineMaterial );
+				group.add(line);
 			});
 		}
 		else if (type === "mesh") {
 			vectorPoints.forEach((array: any) => {
-				group.add( new Mesh( array, meshMaterial ));
+				const mesh = new Mesh( array, meshMaterial )
+				group.add(mesh);
 			});
 		}
-		
+		while (gui.__controllers.length) {
+            gui.__controllers.forEach((controller: any) => gui.remove(controller))    
+        }
 		gui.add(group.scale, "x", 0.1, 2).step(0.1);
 		gui.add(group.scale, "y", 0.1, 2).step(0.1);
 		gui.add(group.scale, "z", 0.1, 2).step(0.1);

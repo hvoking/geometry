@@ -19,9 +19,9 @@ export const GuiContainer = () => {
 	}, []);
 
 	return (
-		<div className="gui_container-wrapper">
+		<div className="gui-wrapper">
 		  <div id="mydivheader">GUI Container</div>
-		  <div ref={guiContainerRef} className="gui_container"></div>
+		  <div ref={guiContainerRef} className="gui-container"></div>
 		</div>
 	)
 }

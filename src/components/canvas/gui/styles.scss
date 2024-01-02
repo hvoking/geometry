@@ -1,11 +1,11 @@
-.gui_container{
-  position: relative;
-}
-.gui_container-wrapper {
+.gui-wrapper {
   position: absolute;
   text-align: center;
   top: 60px;
   left: 100px;
+}
+.gui-container{
+  position: relative;
 }
 #mydivheader {
   padding: 10px;
