@@ -17,7 +17,7 @@ import { useSliderSizes } from '../../context/sizes/slider';
 import * as d3 from 'd3';
 
 export const Slider = () => {
-  const { quantity, setQuantity } = useFilters();
+  const { currentPosition, setCurrentPosition, setQuantity } = useFilters();
   const [ activeForeground, setActiveForeground ] = useState(false);
 
   const { innerWidth, innerHeight } = useSliderSizes();
@@ -36,7 +36,7 @@ export const Slider = () => {
         <Legend 
           xScale={xScale}
           circleRadius={circleRadius} 
-          currentPosition={quantity}
+          currentPosition={currentPosition}
         />
         <Background
           xScale={xScale} 
@@ -47,12 +47,12 @@ export const Slider = () => {
         <Foreground
           xScale={xScale} 
           minBound={minBound}
-          currentPosition={quantity} 
+          currentPosition={currentPosition} 
           circleRadius={circleRadius}
           activeForeground={activeForeground}
         />
         <Handler
-          cx={xScale(quantity)} 
+          cx={xScale(currentPosition)} 
           cy={circleRadius} 
           r={circleRadius}
         />
@@ -60,8 +60,8 @@ export const Slider = () => {
           xScale={xScale}
           innerWidth={innerWidth}
           innerHeight={innerHeight}
-          setCurrentPosition={setQuantity}
-          setNetArea={setQuantity}
+          setCurrentPosition={setCurrentPosition}
+          setNetArea={setQuantity }
           minBound={minBound}
           maxBound={maxBound}
           setActiveForeground={setActiveForeground}

@@ -13,12 +13,14 @@ export const FiltersProvider = ({children}: any) => {
 	const [ type, setType ] = useState<string>("points");
 	const [ equation, setEquation ] = useState<string>("Cube");
 	const [ quantity, setQuantity ] = useState<number>(33);
+	const [ currentPosition, setCurrentPosition ] = useState<number>(33);
 
 	return (
 		<FiltersContext.Provider value= {{ 
 			type, setType,
 			equation, setEquation,
 			quantity, setQuantity,
+			currentPosition, setCurrentPosition,
 		}}>
 			{children}
 		</FiltersContext.Provider>

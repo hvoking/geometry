@@ -1,6 +1,6 @@
 import { TypeSelector } from './type';
 import { Options } from './options';
-import { GuiContainer } from './gui';
+import { Controller } from './controller';
 import { Slider } from './slider';
 import './styles.scss';
 
@@ -12,10 +12,7 @@ export const Left = () => {
 			<Slider/>
 			</div>
 			<Options/>
-			<div style={{position: "relative"}}>
-				<GuiContainer/>
-			</div>
-			
+			<Controller/>
 		</div>
 	)
 }
