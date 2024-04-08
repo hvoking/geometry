@@ -1,9 +1,9 @@
 // App imports
-import { Main } from './components';
+import { Main } from './components/main';
 import './styles.scss';
 
 // Context imports
-import { MainProvider } from './components/context';
+import { MainProvider } from './components/main/context';
 
 export const App = () => {
   return (
