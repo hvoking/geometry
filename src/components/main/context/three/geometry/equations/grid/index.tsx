@@ -8,6 +8,7 @@ export const gridEquations = (name: any, xmin: any, xmax: any, ymin: any, ymax: 
     for (let i = 0; i < quantity; i++) {
         xx.push([]);
         yy.push([]);
+        
         for (let j = 0; j < quantity; j++) {
             xx[i].push(x[j]);
             yy[i].push(y[i]);

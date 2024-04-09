@@ -25,7 +25,7 @@ export const CanvasProvider = ({children}: any) => {
 	const renderer = new THREE.WebGLRenderer();
 	const camera = new THREE.PerspectiveCamera(40, 2, 0.1, 1000);
 	
-	renderer.setClearColor(0xd4d0c8, 0);
+	renderer.setClearColor(0x484848, 0.2);
 	camera.position.set(2, 2, 2).multiplyScalar(10);
 	camera.lookAt(0, 0, 0);
 

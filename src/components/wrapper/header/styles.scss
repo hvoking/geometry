@@ -20,3 +20,8 @@
    font-size: 0.7em;
    letter-spacing: 3.6px;
 }
+@media screen and (max-width: 600px) {
+  .gnrt-logo {
+    padding-left: 10px;
+  }
+}

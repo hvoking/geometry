@@ -15,29 +15,29 @@ export const Options = () => {
 		    <div className="formulas-wrapper">
 		          <div 
 		          	onClick={() => setEquation("Sphere")}
-		          	style={{backgroundColor: equation === "Sphere" ? "rgba(0, 0, 0, 1)" : "rgba(0, 0, 0, 0)"}}
+		          	style={{backgroundColor: equation === "Sphere" ? "rgba(0, 0, 0, 1)" : "rgba(0, 120, 120, 0)"}}
 		          >
-		          	Sphere
+		          	<img className="geometries-selector-wrapper" src={process.env.PUBLIC_URL + "/static/geometries/Asset1.png"} alt="asset-1"/>
 		          </div>
 		          <div 
 		          	onClick={() => setEquation("Cube")}
-      	          	style={{backgroundColor: equation === "Cube" ? "rgba(0, 0, 0, 1)" : "rgba(0, 0, 0, 0)"}}
+      	          	style={{backgroundColor: equation === "Cube" ? "rgba(0, 0, 0, 1)" : "rgba(0, 120, 120, 0)"}}
 		          >
-		          	Waves1
+		          	<img className="geometries-selector-wrapper" src={process.env.PUBLIC_URL + "/static/geometries/Asset2.png"} alt="asset-2"/>
 		          </div>
 		          <div 
 		          	onClick={() => setEquation("Cylinder")}
-      	          	style={{backgroundColor: equation === "Cylinder" ? "rgba(0, 0, 0, 1)" : "rgba(0, 0, 0, 0)"}}
+      	          	style={{backgroundColor: equation === "Cylinder" ? "rgba(0, 0, 0, 1)" : "rgba(0, 120, 120, 0)"}}
 		          >
-		          	Waves2
+		          	<img className="geometries-selector-wrapper" src={process.env.PUBLIC_URL + "/static/geometries/Asset3.png"} alt="asset-3"/>
 		          </div>
 		          <div 
 		          	onClick={() => setEquation("Equation1")}
       	          	style={{
-      					backgroundColor: equation === "Equation1" ? "rgba(0, 0, 0, 1)" : "rgba(0, 0, 0, 0)"
+      					backgroundColor: equation === "Equation1" ? "rgba(0, 0, 0, 1)" : "rgba(0, 120, 120, 0)"
       				}}
 		          >
-		          	Waves3
+		          	<img className="geometries-selector-wrapper" src={process.env.PUBLIC_URL + "/static/geometries/Asset4.png"} alt="asset-4"/>
 		          </div>
 		     </div>
 		</div>
