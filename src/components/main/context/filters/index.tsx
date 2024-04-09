@@ -12,8 +12,8 @@ export const useFilters = () => {
 export const FiltersProvider = ({children}: any) => {
 	const [ type, setType ] = useState<string>("points");
 	const [ equation, setEquation ] = useState<string>("Cube");
-	const [ quantity, setQuantity ] = useState<number>(33);
-	const [ currentPosition, setCurrentPosition ] = useState<number>(33);
+	const [ quantity, setQuantity ] = useState<number>(60);
+	const [ currentPosition, setCurrentPosition ] = useState<number>(60);
 
 	return (
 		<FiltersContext.Provider value= {{ 

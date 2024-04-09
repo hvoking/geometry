@@ -1,6 +1,7 @@
 // App imports
 import { Wrapper } from '../wrapper';
 import { Left } from './left';
+import { Right } from './right';
 import { Grid } from './grid';
 import './styles.scss';
 
@@ -8,15 +9,16 @@ import './styles.scss';
 import { useCanvas } from './context/three/canvas';
 
 export const Main = () => {
-	const { guiRef, canvasRef } = useCanvas();
+	const { canvasRef } = useCanvas();
 
 	return (
 		<Wrapper>
 			<div className="main-wrapper">
 				<Left/>
-      			<div ref={canvasRef} style={{position: "relative"}}><Grid/>
+      			<div ref={canvasRef} style={{position: "relative"}}>
+      				<Grid/>
       			</div>
-      			<div ref={guiRef}></div>
+      			<Right/>
       		</div>
 		</Wrapper>
 	)

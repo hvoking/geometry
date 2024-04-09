@@ -14,8 +14,6 @@ export const Legend = ({ xScale, circleRadius, currentPosition }: any) => {
 		<rect
 			x={xScale(currentPosition) - legendWidth}
 			y={circleRadius * 3}
-			rx={2}
-			ry={2}
 			width={legendWidth * 2}
 			height={circleRadius * 3}
 			fill="rgba(23, 23, 32, 1)"

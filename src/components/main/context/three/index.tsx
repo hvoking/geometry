@@ -1,16 +1,16 @@
 // Context imports
 import { CanvasProvider } from './canvas';
-import { MaterialsProvider } from './materials';
-import { ThreeGeometryProvider } from './geometry';
+import { MaterialProvider } from './material';
+import { GeometryProvider } from './geometry';
 
 export const ThreeProvider = ({ children }: any) => {
 	return (
 		<CanvasProvider>
-		<MaterialsProvider>
-		<ThreeGeometryProvider>
+		<MaterialProvider>
+		<GeometryProvider>
 			{ children }
-		</ThreeGeometryProvider>
-		</MaterialsProvider>
+		</GeometryProvider>
+		</MaterialProvider>
 		</CanvasProvider>
 	)
 }

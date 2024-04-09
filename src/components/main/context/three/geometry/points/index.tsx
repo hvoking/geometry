@@ -15,7 +15,7 @@ export const getPoints = (geometry: any, equation: any, quantity: any) => {
             points = sphereTriangulation(points);
         }
     } else {
-        const { xx, yy, zz } = gridEquations(equation, -10, 10, -10, 10, parseInt(quantity));
+        const { xx, yy, zz } = gridEquations(equation, -10, 10, -10, 10, quantity);
         if (geometry === "mesh" || geometry === "lines") {
             points = meshTriangulation(xx, yy, zz);
         } else {

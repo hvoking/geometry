@@ -2,12 +2,10 @@ export const Background = ({ xScale, minBound, maxBound, circleRadius }: any) =>
 	return (
 		<rect
 			x={xScale(minBound)}
-			y={circleRadius / 2}
-			rx={circleRadius / 2}
-			ry={circleRadius / 2}
+			y={0}
 			width={xScale(maxBound) - xScale(minBound)}
-			height={circleRadius}
-			fill="rgba(126, 126, 132, 0.4)"
+			height={circleRadius * 2}
+			fill="rgba(48, 48, 48, 1)"
 		/>
 	)
 }

@@ -22,8 +22,8 @@ export const Slider = () => {
 
   const { innerWidth, innerHeight } = useSliderSizes();
 
-  const minBound = 0;
-  const maxBound = 300;
+  const minBound = 20;
+  const maxBound = 100;
   const circleRadius = innerHeight / 6;
   const offset = 20;
 
@@ -32,7 +32,7 @@ export const Slider = () => {
     .range([ offset, innerWidth - offset ]);
 
   return (
-    <div style={{height: "60px"}}>
+    <div style={{height: "60px", width: "100%"}}>
       <SVGWrapper>
         <Legend 
           xScale={xScale}

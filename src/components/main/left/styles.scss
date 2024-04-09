@@ -1,7 +1,8 @@
 .left-wrapper {
-	padding: 5px;
-	border-radius: 20px;
 	display: grid;
 	grid-template-rows: min-content min-content min-content auto;
-	background-color: rgba(32, 32, 43, 1);
+	background-color: rgba(0, 160, 160, 0.1);
+	overflow: hidden;
+	grid-gap: 20px;
+	padding: 20px;
 }

@@ -17,28 +17,35 @@ export const useCanvas = () => {
 }
 
 export const CanvasProvider = ({children}: any) => {
-	const [ scene, setScene ] = useState<any>(new THREE.Scene());
 	const [ gui, setGui ] = useState<any>(new GUI({ autoPlace: false }));
-
 	const canvasRef = useRef<any>(null);
 	const guiRef = useRef<any>(null);
 
+	const [ scene, setScene ] = useState<any>(new THREE.Scene());
 	const renderer = new THREE.WebGLRenderer();
-	renderer.setClearColor(0xd4d0c8, 0);
+	const camera = new THREE.PerspectiveCamera(40, 2, 0.1, 1000);
 	
-	const camera = new THREE.PerspectiveCamera(40, 2, 0.1, 1000)
-	camera.position.set(2, 2, 2).multiplyScalar(8);
+	renderer.setClearColor(0xd4d0c8, 0);
+	camera.position.set(2, 2, 2).multiplyScalar(10);
 	camera.lookAt(0, 0, 0);
 
 	useEffect(() => {
 		// Set the controls 
 		new OrbitControls( camera, renderer.domElement );
+		const setCurrentSize = () => {
+			const clientWidth = canvasRef.current.clientWidth;
+			const clientHeight = canvasRef.current.clientHeight;
 
-		canvasRef.current && renderer.setSize( canvasRef.current.clientWidth, canvasRef.current.clientHeight );
+			camera.aspect = clientWidth / clientHeight;
+    		camera.updateProjectionMatrix();
 
-		// Add elements to the html 
-		canvasRef.current && canvasRef.current.appendChild(renderer.domElement);
+			renderer.setSize( clientWidth, clientHeight );
+			canvasRef.current.appendChild(renderer.domElement);	
+		}
+		canvasRef.current && setCurrentSize();
+	}, []);
 
+	useEffect(() => {
 	  	const animate = (time: any) => {
 	  		time *= 0.01
 			if (scene.children[0] != undefined) {
@@ -48,7 +55,7 @@ export const CanvasProvider = ({children}: any) => {
 			renderer.render( scene, camera );
 		}
 		requestAnimationFrame(animate);
-	}, []);
+	}, [])
 
 	useEffect(() => {
 		if (guiRef.current != null) { 

@@ -1,33 +1,35 @@
 // React imports
-import { useContext, createContext } from 'react';
+import { useEffect, useContext, createContext } from 'react';
+
+// App imports
+import { getPoints } from './points';
+import { createVectors } from './vectors';
+import { createGrid } from './list';
 
 // Context imports
 import { useFilters } from '../../filters';
-import { useMaterials } from '../materials';
+import { useMaterial } from '../material';
 import { useCanvas } from '../canvas';
 
 // Third-party imports
 import { Object3D, Points, Mesh, Line, HemisphereLight } from "three";
 
-const ThreeGeometryContext: React.Context<any> = createContext(null)
+const GeometryContext: React.Context<any> = createContext(null)
 
-export const useThreeGeometry = () => {
+export const useGeometry = () => {
 	return (
-		useContext(ThreeGeometryContext)
+		useContext(GeometryContext)
 	)
 }
 
-export const ThreeGeometryProvider = ({children}: any) => {
-	const { type } = useFilters();
+export const GeometryProvider = ({children}: any) => {
+	const { type, equation, quantity } = useFilters();
 	const { scene, clearScene, gui, setGui } = useCanvas();
-	const { pointMaterial, lineMaterial, meshMaterial } = useMaterials();
-
-	const light = new HemisphereLight( 0xffffbb, 0x080820, 2 )
+	const { pointMaterial, lineMaterial, meshMaterial } = useMaterial();
 
 	const createGeometry = (vectorPoints: any) => {
 		const group = new Object3D();
 		clearScene(scene);
-		scene.add(light);
 		scene.add(group);
 		group.position.set(0, 0, 0);
 
@@ -59,11 +61,18 @@ export const ThreeGeometryProvider = ({children}: any) => {
 		gui.add(group.scale, "z", 0.1, 2).step(0.1);
 	}
 
+	useEffect(() => {
+	    const points = getPoints(type, equation, quantity);
+	    const vectors = createVectors(points);
+	    const grid = createGrid(vectors);
+	    createGeometry(grid);
+	}, [ type, equation, quantity ]);
+
 	return (
-		<ThreeGeometryContext.Provider value= {{ createGeometry }}>
+		<GeometryContext.Provider value= {{ createGeometry }}>
 			{children}
-		</ThreeGeometryContext.Provider>
+		</GeometryContext.Provider>
 	)
 }
 
-ThreeGeometryContext.displayName = "ThreeGeometryContext";
+GeometryContext.displayName = "GeometryContext";
