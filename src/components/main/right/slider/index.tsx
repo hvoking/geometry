@@ -5,9 +5,8 @@ import { useState } from 'react';
 import { SVGWrapper } from './svg';
 import { Background } from './background';
 import { Foreground } from './foreground';
-import { Handler } from './handler';
-import { Legend } from './legend';
 import { Wrapper } from './wrapper';
+import './styles.scss';
 
 // Context imports
 import { useFilters } from '../../context/filters';
@@ -18,13 +17,10 @@ import * as d3 from 'd3';
 
 export const Slider = () => {
   const { currentPosition, setCurrentPosition, setQuantity } = useFilters();
-  const [ activeForeground, setActiveForeground ] = useState(false);
-
   const { innerWidth, innerHeight } = useSliderSizes();
 
   const minBound = 20;
   const maxBound = 100;
-  const circleRadius = innerHeight / 6;
   const offset = 20;
 
   const xScale: any = d3.scaleLinear()
@@ -32,30 +28,19 @@ export const Slider = () => {
     .range([ offset, innerWidth - offset ]);
 
   return (
-    <div style={{height: "60px", width: "100%"}}>
+    <div className="right-slider-wrapper">
       <SVGWrapper>
-        <Legend 
-          xScale={xScale}
-          circleRadius={circleRadius} 
-          currentPosition={currentPosition}
-        />
         <Background
           xScale={xScale} 
           minBound={minBound} 
           maxBound={maxBound} 
-          circleRadius={circleRadius}
+          innerHeight={innerHeight}
         />
         <Foreground
           xScale={xScale} 
           minBound={minBound}
           currentPosition={currentPosition} 
-          circleRadius={circleRadius}
-          activeForeground={activeForeground}
-        />
-        <Handler
-          cx={xScale(currentPosition)} 
-          cy={circleRadius} 
-          r={circleRadius}
+          innerHeight={innerHeight}
         />
         <Wrapper
           xScale={xScale}
@@ -65,7 +50,6 @@ export const Slider = () => {
           setNetArea={setQuantity }
           minBound={minBound}
           maxBound={maxBound}
-          setActiveForeground={setActiveForeground}
         />
       </SVGWrapper>
     </div>

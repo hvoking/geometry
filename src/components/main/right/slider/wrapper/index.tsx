@@ -8,8 +8,7 @@ export const Wrapper = ({
     xScale, 
     minBound, maxBound,
     innerWidth, innerHeight, 
-    setCurrentPosition, setNetArea,
-    setActiveForeground
+    setCurrentPosition, setNetArea
 }: any) => {
     const onDragStart = (event: any) => {
         const x = xScale.invert(event.x);
@@ -46,22 +45,13 @@ export const Wrapper = ({
             .on('end', onDragEnd);
         d3.select(node).call(drag);
     }, []);
-
-    const onMouseOver = () => {
-        setActiveForeground(true);
-    }
-    const onMouseLeave = () => {
-        setActiveForeground(false);
-    }
-
+    
 	return (
         <rect
             ref={sliderRef}
             width={innerWidth}
             height={innerHeight}
             fill="transparent"
-            onMouseOver={onMouseOver}
-            onMouseLeave={onMouseLeave}
         />
 	)
 }
