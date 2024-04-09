@@ -6,23 +6,18 @@ import { OrbitControls } from './orbit'
 
 // Context imports
 import { useCanvas } from '../context/three/canvas';
-import { useCamera } from '../context/three/camera';
 
 export const Geometry = () => {
-	const { scene, createNewRenderer } = useCanvas();
-	const { createNewCamera } = useCamera();
+	const { camera, scene, renderer } = useCanvas();
 
 	const canvasRef = useRef<any>(null);
 
 	useEffect(() => {
-		const camera = createNewCamera();
-		const renderer = createNewRenderer();
-
 		// Set the controls 
 		new OrbitControls( camera, renderer.domElement );
 
 		// Add elements to the html 
-		canvasRef.current && canvasRef.current.appendChild( renderer.domElement );
+		canvasRef.current && canvasRef.current.appendChild(renderer.domElement);
 
 	  	const animate = (time: any) => {
 	  		time *= 0.01

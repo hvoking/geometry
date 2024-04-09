@@ -32,6 +32,7 @@ export const Slider = () => {
     .range([ offset, innerWidth - offset ]);
 
   return (
+    <div style={{height: "60px"}}>
       <SVGWrapper>
         <Legend 
           xScale={xScale}
@@ -67,6 +68,7 @@ export const Slider = () => {
           setActiveForeground={setActiveForeground}
         />
       </SVGWrapper>
+    </div>
   )
 }
 

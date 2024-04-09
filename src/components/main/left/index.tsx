@@ -8,9 +8,7 @@ export const Left = () => {
 	return (
 		<div className="left-wrapper">
 			<TypeSelector/>
-			<div style={{height: "80px"}}>
 			<Slider/>
-			</div>
 			<Options/>
 			<Controller/>
 		</div>

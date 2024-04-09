@@ -43,7 +43,9 @@ export const ThreeGeometryProvider = ({children}: any) => {
 		else if (type === "mesh") {
 			vectorPoints.forEach((array: any) => {
 				const mesh = new Mesh( array, meshMaterial )
+				const line =  new Line( array, lineMaterial );
 				group.add(mesh);
+				group.add(line)
 			});
 		}
 		while (gui.__controllers.length) {
