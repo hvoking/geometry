@@ -16,20 +16,48 @@ import { useSliderSizes } from '../../context/sizes/slider';
 import * as d3 from 'd3';
 
 export const Slider = () => {
-  const { currentPosition, setCurrentPosition, setQuantity } = useFilters();
+  const { currentPosition, setCurrentPosition, quantity, setQuantity } = useFilters();
   const { innerWidth, innerHeight } = useSliderSizes();
 
   const minBound = 20;
   const maxBound = 100;
-  const offset = 20;
+  const offsetLeft = 48;
+  const offsetRight = 45;
 
   const xScale: any = d3.scaleLinear()
     .domain([ minBound, maxBound ])
-    .range([ offset, innerWidth - offset ]);
+    .range([ offsetLeft, innerWidth - offsetRight ]);
 
   return (
     <div className="right-slider-wrapper">
       <SVGWrapper>
+        <rect
+          x={0}
+          y={0}
+          width={innerWidth}
+          height={innerHeight}
+          fill="rgba(0, 0, 0, 1)"
+        />
+        <text 
+          fill="rgba(255, 255, 255, 0.8)"
+          fontSize="0.8em"
+          x={24}
+          y={15}
+          alignmentBaseline="middle"
+          textAnchor="middle"
+        >
+          points
+        </text>
+        <text 
+          fill="rgba(255, 255, 255, 0.8)"
+          fontSize="0.8em"
+          x={innerWidth - 7}
+          y={15}
+          alignmentBaseline="middle"
+          textAnchor="end"
+        >
+          {quantity * quantity}
+        </text>
         <Background
           xScale={xScale} 
           minBound={minBound} 

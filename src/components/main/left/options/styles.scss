@@ -12,3 +12,13 @@
 		align-content: center;
 	}
 }
+
+@media screen and (max-width: 1000px) {
+	.formulas-wrapper {
+		div {
+			height: 40px;
+		}
+	}
+
+	
+}

@@ -1,7 +1,6 @@
 // App imports
 import { Wrapper } from '../wrapper';
 import { Left } from './left';
-import { Right } from './right';
 import { Grid } from './grid';
 import './styles.scss';
 
@@ -18,7 +17,6 @@ export const Main = () => {
       			<div ref={canvasRef} style={{position: "relative"}}>
       				<Grid/>
       			</div>
-      			<Right/>
       		</div>
 		</Wrapper>
 	)

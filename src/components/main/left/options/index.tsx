@@ -15,25 +15,19 @@ export const Options = () => {
 		    <div className="formulas-wrapper">
 		          <div 
 		          	onClick={() => setEquation("Sphere")}
-		          	style={{
-						backgroundColor: equation === "Sphere" ? "rgba(0, 0, 0, 1)" : "rgba(0, 0, 0, 0)"
-					}}
+		          	style={{backgroundColor: equation === "Sphere" ? "rgba(0, 0, 0, 1)" : "rgba(0, 0, 0, 0)"}}
 		          >
 		          	Sphere
 		          </div>
 		          <div 
 		          	onClick={() => setEquation("Cube")}
-      	          	style={{
-      					backgroundColor: equation === "Cube" ? "rgba(0, 0, 0, 1)" : "rgba(0, 0, 0, 0)"
-      				}}
+      	          	style={{backgroundColor: equation === "Cube" ? "rgba(0, 0, 0, 1)" : "rgba(0, 0, 0, 0)"}}
 		          >
 		          	Waves1
 		          </div>
 		          <div 
 		          	onClick={() => setEquation("Cylinder")}
-      	          	style={{
-      					backgroundColor: equation === "Cylinder" ? "rgba(0, 0, 0, 1)" : "rgba(0, 0, 0, 0)"
-      				}}
+      	          	style={{backgroundColor: equation === "Cylinder" ? "rgba(0, 0, 0, 1)" : "rgba(0, 0, 0, 0)"}}
 		          >
 		          	Waves2
 		          </div>

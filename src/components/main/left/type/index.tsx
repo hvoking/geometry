@@ -15,17 +15,13 @@ export const TypeSelector = () => {
 			<div className="type-selector">
 				<div 
 					onClick={() => setType("points")} 
-					style={{
-						backgroundColor: type === "points" ? "rgba(0, 0, 0, 1)" : "rgba(0, 0, 0, 0)"
-					}}
+					style={{backgroundColor: type === "points" ? "rgba(0, 0, 0, 1)" : "rgba(0, 0, 0, 0)"}}
 				>
 					Points
 				</div>
 				<div 
 					onClick={() => setType("mesh")}
-					style={{
-						backgroundColor: type === "mesh" ? "rgba(0, 0, 0, 1)" : "rgba(0, 0, 0, 0)"
-					}}
+					style={{backgroundColor: type === "mesh" ? "rgba(0, 0, 0, 1)" : "rgba(0, 0, 0, 0)"}}
 				>
 					Mesh
 				</div>
