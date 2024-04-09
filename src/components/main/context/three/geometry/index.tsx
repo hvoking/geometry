@@ -7,7 +7,7 @@ import { useMaterials } from '../materials';
 import { useCanvas } from '../canvas';
 
 // Third-party imports
-import { Object3D, Points, Mesh, Line } from "three";
+import { Object3D, Points, Mesh, Line, HemisphereLight } from "three";
 
 const ThreeGeometryContext: React.Context<any> = createContext(null)
 
@@ -22,9 +22,12 @@ export const ThreeGeometryProvider = ({children}: any) => {
 	const { scene, clearScene, gui, setGui } = useCanvas();
 	const { pointMaterial, lineMaterial, meshMaterial } = useMaterials();
 
+	const light = new HemisphereLight( 0xffffbb, 0x080820, 2 )
+
 	const createGeometry = (vectorPoints: any) => {
 		const group = new Object3D();
 		clearScene(scene);
+		scene.add(light);
 		scene.add(group);
 		group.position.set(0, 0, 0);
 

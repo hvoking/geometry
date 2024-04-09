@@ -1,6 +1,11 @@
-// App imports
-import { sphereTriangulation, meshTriangulation, pointTriangulation } from '../triangulation';
-import { sphereEquation, gridEquations } from '../equations';
+// Triangulation imports
+import { pointTriangulation } from '../triangulation/point';
+import { sphereTriangulation } from '../triangulation/sphere';
+import { meshTriangulation } from '../triangulation/mesh';
+
+// Equation imports
+import { sphereEquation } from '../equations/sphere';
+import { gridEquations } from '../equations/grid';
 
 export const getPoints = (geometry: any, equation: any, quantity: any) => {
     let points = [];

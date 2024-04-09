@@ -4,7 +4,7 @@ import { useState, useEffect, useContext, createContext } from 'react';
 // App imports
 import { getPoints } from './points';
 import { createVectors } from './vectors';
-import { createListOfPoints } from './list';
+import { createGrid } from './list';
 
 // Context imports
 import { useThreeGeometry } from '../three/geometry';
@@ -25,8 +25,8 @@ export const GeometryProvider = ({children}: any) => {
     useEffect(() => {
         const points = getPoints(type, equation, quantity);
         const vectors = createVectors(points);
-        const listOfPoints = createListOfPoints(vectors);
-        createGeometry(listOfPoints);
+        const grid = createGrid(vectors);
+        createGeometry(grid);
     }, [ type, equation, quantity ]);
 
     return (
