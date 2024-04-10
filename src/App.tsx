@@ -7,9 +7,11 @@ import { MainProvider } from './components/main/context';
 
 export const App = () => {
   return (
-    <MainProvider>
-      <Main/>
-    </MainProvider>
+    <div className="App">
+      <MainProvider>
+        <Main/>
+      </MainProvider>
+    </div>
   );
 }
 

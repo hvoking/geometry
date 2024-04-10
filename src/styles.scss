@@ -3,6 +3,9 @@ body {
   overflow: hidden;
   background-color: rgba(23, 23, 32, 1);
   font-family: Monserrat, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color:transparent;
 }
 .App {
   overflow: hidden;

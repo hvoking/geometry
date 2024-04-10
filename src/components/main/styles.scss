@@ -1,7 +1,7 @@
 .main-wrapper {
 	display: grid; 
 	grid-template-columns: 5fr 19fr;
-	height: 100vh;
+	overflow: hidden;
 }
 .sidebar-title {
 	color: rgba(255, 255, 255, 1); 
