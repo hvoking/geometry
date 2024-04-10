@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/serverless-geometry-creator/static/css/main.2aa047b0.css",
+    "main.js": "/serverless-geometry-creator/static/js/main.40e7db44.js",
+    "index.html": "/serverless-geometry-creator/index.html",
+    "main.2aa047b0.css.map": "/serverless-geometry-creator/static/css/main.2aa047b0.css.map",
+    "main.40e7db44.js.map": "/serverless-geometry-creator/static/js/main.40e7db44.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2aa047b0.css",
+    "static/js/main.40e7db44.js"
+  ]
+}
