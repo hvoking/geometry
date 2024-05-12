@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/serverless-geometry-creator/static/css/main.20c9f515.css",
-    "main.js": "/serverless-geometry-creator/static/js/main.d72c3192.js",
-    "index.html": "/serverless-geometry-creator/index.html",
-    "main.20c9f515.css.map": "/serverless-geometry-creator/static/css/main.20c9f515.css.map",
-    "main.d72c3192.js.map": "/serverless-geometry-creator/static/js/main.d72c3192.js.map"
+    "main.css": "/geometry/static/css/main.20c9f515.css",
+    "main.js": "/geometry/static/js/main.16e38316.js",
+    "index.html": "/geometry/index.html",
+    "main.20c9f515.css.map": "/geometry/static/css/main.20c9f515.css.map",
+    "main.16e38316.js.map": "/geometry/static/js/main.16e38316.js.map"
   },
   "entrypoints": [
     "static/css/main.20c9f515.css",
-    "static/js/main.d72c3192.js"
+    "static/js/main.16e38316.js"
   ]
 }
