@@ -1,0 +1,43 @@
+.dg {
+	width: 100% !important;
+}
+.property-name {
+	width: min-content !important;
+	font-size: 1.4em !important;
+	padding-right: 20px !important;
+	padding-left: 20px !important;
+}
+.dg .cr {
+	border-left: none !important;
+	padding: 0 !important;
+	background: rgba(0, 0, 0, 1) !important;
+	margin-bottom: 15px !important;
+}
+.c {
+	width: calc(100% - 50px) !important;
+}
+.slider-fg {
+	background: rgba(0, 120, 120, 0.6) !important;
+
+}
+.close-button {
+	display: none;
+}
+.dg .slider {
+	width: calc(100% - 30px) !important;
+}
+.has-slider {
+	input {
+		text-align: center;
+		color: rgba(255, 255, 255, 1) !important;
+		margin: 0 !important;
+		width: 20px !important;
+		height: 25px !important;
+		background-color: transparent !important;
+		font-size: 1.2em !important;
+	}
+	.slider {
+		margin: 0 !important;
+		height: 27px !important;
+	}
+}
