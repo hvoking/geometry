@@ -2,7 +2,7 @@
 import { useState, useEffect, useRef, useContext, createContext } from 'react';
 
 // App imports
-import { OrbitControls } from './orbit'
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
 // Third-party imports
 import * as THREE from "three";
@@ -21,7 +21,7 @@ export const CanvasProvider = ({children}: any) => {
 	const canvasRef = useRef<any>(null);
 	const guiRef = useRef<any>(null);
 
-	const [ scene, setScene ] = useState<any>(new THREE.Scene());
+	const scene= new THREE.Scene();
 	const renderer = new THREE.WebGLRenderer();
 	const camera = new THREE.PerspectiveCamera(40, 2, 0.1, 1000);
 	
@@ -48,7 +48,7 @@ export const CanvasProvider = ({children}: any) => {
 	useEffect(() => {
 	  	const animate = (time: any) => {
 	  		time *= 0.01
-			if (scene.children[0] != undefined) {
+			if (scene.children[0] !== undefined) {
 				scene.children[0].rotation.y = time*0.01;
 			}
 			requestAnimationFrame( animate );
@@ -58,7 +58,7 @@ export const CanvasProvider = ({children}: any) => {
 	}, [])
 
 	useEffect(() => {
-		if (guiRef.current != null) { 
+		if (guiRef.current !== null) { 
 			guiRef.current.innerHTML = '';
 			guiRef.current.appendChild(gui.domElement);
 		}
